@@ -1,0 +1,13 @@
+@import '/src/assets/stylesheets/general.scss';
+
+.product-card {
+
+  &__info {
+    width: 22%;
+    margin: 0 1.5%;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}

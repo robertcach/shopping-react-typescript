@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ProductCard from "../../components/ProductCard/ProductCard";
 import { Product } from "../../types";
 import "./Home.scss";
 
@@ -15,17 +16,25 @@ const Home = () => {
 
 
   return (
-    <>
+    <main>
       <h1>Home</h1>
-      {products.length > 0 ? products.map(product => (
-          <div key={product.id}>
-            <p>{product.title}</p>
-          </div>
-        )) : 
-        <span>loading...</span>
-      }
-    </>
+
+      <div className="product-card wrapper">
+        {products.length > 0 ? products.map(product => (
+            <ProductCard 
+              category={product.category}
+              id={product.id}
+              image={product.image}
+              price={product.price}
+              title={product.title}
+              key={product.id}
+            />
+          )) : 
+          <span>loading...</span>
+        }
+      </div>
+    </main>
   )
 }
 
-export default Home
+export default Home;

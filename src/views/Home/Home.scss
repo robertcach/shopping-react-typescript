@@ -1,1 +1,5 @@
 @import '/src/assets/stylesheets/general.scss';
+
+.product-card {
+  @include flex(flex, row, wrap, flex-start, flex-start)
+}
