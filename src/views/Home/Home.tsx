@@ -1,9 +1,20 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import "./Home.scss";
 
-const API_URL= "https://fakestoreapi.com/products"
+const API_URL= "https://fakestoreapi.com/products";
+
+interface Product {
+  category: string;
+  description: string;
+  id: number;
+  image: string;
+  price: number;
+  rating: object;
+  title: string;
+}
 
 const Home = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     fetch(API_URL)
@@ -11,20 +22,16 @@ const Home = () => {
       .then(productsAPI => setProducts(productsAPI))
   }, [])
 
-  console.log(products)
-
 
   return (
     <>
       <h1>Home</h1>
-      {products ? products.map(product => {
-        return (
-          <>
+      {products.length > 0 ? products.map(product => (
+          <div key={product.id}>
             <p>{product.title}</p>
-          </>
-        )
-      }) :
-        <p>loading...</p>
+          </div>
+        )) : 
+        <span>loading...</span>
       }
     </>
   )
