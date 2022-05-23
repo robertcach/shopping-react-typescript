@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { Product } from "../../types";
+import { getProductsFromApi } from "../../services/api";
 import "./Home.scss";
-
-const API_URL= "https://fakestoreapi.com/products";
 
 const Home = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    fetch(API_URL)
-      .then(response => response.json())
+    getProductsFromApi()
       .then(productsAPI => setProducts(productsAPI))
   }, [])
 
