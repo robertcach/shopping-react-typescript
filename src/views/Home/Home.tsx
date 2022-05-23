@@ -1,17 +1,8 @@
 import { useEffect, useState } from "react";
+import { Product } from "../../types";
 import "./Home.scss";
 
 const API_URL= "https://fakestoreapi.com/products";
-
-interface Product {
-  category: string;
-  description: string;
-  id: number;
-  image: string;
-  price: number;
-  rating: object;
-  title: string;
-}
 
 const Home = () => {
   const [products, setProducts] = useState<Product[]>([]);
