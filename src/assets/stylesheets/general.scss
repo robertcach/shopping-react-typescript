@@ -1,0 +1,32 @@
+@import '/src/assets/stylesheets/general.scss';
+@import '/src/assets/stylesheets/mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+
+/* GENERAL STYLES */
+* {
+  @include reset-p-m();
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: 'Open Sans', sans-serif;
+  background-color: $black-color;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $white-color;
+}
+
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    @include mobile-width();
+  }
+}
