@@ -5,7 +5,7 @@ import { Product } from "../../types";
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const [product, setProduct] = useState<Product>()
+  const [product, setProduct] = useState<Product | null>(null)
 
   useEffect(() => {
       getSingleProduct(Number(id))
@@ -17,7 +17,16 @@ const ProductDetail = () => {
   return (
     <>
       <h1>Product detail</h1>
-      {product && product.title}
+      {product ? (
+        <div>
+          <h2>{product.title}</h2>
+          <p>{product.description}</p>
+          <p>{product.price}€</p>
+          <img src={product.image} alt={product.title} />
+        </div>
+        ) :
+        'loading'
+        }
     </>
   )
   }
