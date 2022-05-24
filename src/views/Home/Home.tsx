@@ -20,7 +20,6 @@ const Home = () => {
       <div className="product-card wrapper">
         {products.length > 0 ? products.map(product => (
             <ProductCard 
-              category={product.category}
               id={product.id}
               image={product.image}
               price={product.price}
