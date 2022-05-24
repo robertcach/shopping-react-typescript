@@ -3,3 +3,7 @@
 .product-card {
   @include flex(flex, row, wrap, flex-start, flex-start)
 }
+
+.header {
+  min-height: 100vh;
+}
