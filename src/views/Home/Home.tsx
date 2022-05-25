@@ -17,25 +17,52 @@ const Home = () => {
   return (
     <main>
       <div className="wrapper header">
-{/*         <motion.div
-        animate={{ x: 0 }}
-        transition={{ ease: "easeOut", duration: 2 }}>
-          <span className='row-message'>
-            We are specialised in setting up the foundation of your brand and
-            setting you up for success.
-          </span>
-        </motion.div>
- */}
-        <motion.div
-          initial={{ opacity: 0, y: 250 }}
-          animate={{ opacity: 1, y: 100 }}
-          transition={{
-            ease: "easeInOut",
-            duration: 1
-          }}
-        >
-          <img src="https://picsum.photos/200/300" alt="imagen-prueba" />
-        </motion.div>
+        <div className="images">
+          <motion.div
+            className="images__div"
+            initial={{ opacity: 0, y: 250, x: 0 }}
+            animate={{ opacity: 1, y: 100, x: 0 }}
+            transition={{
+              ease: "easeInOut",
+              duration: 1
+            }}
+          >
+            <img src="https://picsum.photos/id/237/300/300" alt="imagen-prueba" />
+          </motion.div>
+
+          <motion.div
+            className="images__div"
+            initial={{ opacity: 0, y: 250, x: 800 }}
+            animate={{ opacity: 1, y: 100, x: 800 }}
+            transition={{
+              ease: "easeInOut",
+              duration: 1,
+              delay: 0.5
+            }}
+          >
+            <img src="https://picsum.photos/300/300" alt="imagen-prueba" />
+          </motion.div>
+
+
+          <motion.div
+            className="images__div"
+            initial={{ opacity: 0, y: 250, x: 200 }}
+            animate={{ opacity: 1, y: -150, x: 200 }}
+            transition={{
+              ease: "easeInOut",
+              duration: 1,
+              delay: 1
+            }}
+          >
+            <img src="https://picsum.photos/700/450" alt="imagen-prueba" />
+          </motion.div>
+
+
+
+
+
+        </div>
+        
       </div>
 
       <div className="product-card wrapper">
