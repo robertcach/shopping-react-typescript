@@ -18,6 +18,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $black-color;
+  font-family: $primary-font;
 }
 
 .wrapper {
@@ -27,4 +28,27 @@ body {
   @media (max-width: 768px) {
     @include mobile-width();
   }
+}
+
+
+
+/* FONTS */
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.8rem;
 }

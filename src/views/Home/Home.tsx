@@ -45,6 +45,7 @@ const Home = () => {
 
 
       <div className="product-card wrapper">
+        <h2>Products</h2>
         {products.length > 0 && products.map(product => (
             <ProductCard 
               id={product.id}
