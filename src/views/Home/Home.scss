@@ -51,7 +51,9 @@
 }
 
 .products-card {
-  @include flex(flex, row, wrap, flex-start, flex-start)
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 0.5fr;
+  gap: 1rem
 }
 
 

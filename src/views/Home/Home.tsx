@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { Product } from "../../types";
 import { getProductsFromApi } from "../../services/api";
-import { AnimatePresence, motion } from "framer-motion";
+import {  motion } from "framer-motion";
 import "./Home.scss";
 
 
@@ -12,7 +12,7 @@ const Home = () => {
 
   useEffect(() => {
     getProductsFromApi()
-      .then(productsAPI => setProducts(productsAPI))
+      .then(productsAPI => setProducts(productsAPI.slice(0, 5)))
   }, [])
 
 
