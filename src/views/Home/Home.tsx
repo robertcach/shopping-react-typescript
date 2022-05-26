@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <main>
-      <div className="header wrapper">
+      <section className="header wrapper">
         <div className="header__left">
           <h1 className="header__title">New trendy Fashion</h1>
           <button className="header__btn">Go to shop</button>
@@ -40,23 +40,29 @@ const Home = () => {
           <p className="header__subtitle">I must explains to you how all this idea of denouncing pleasure</p>
         </div>  
 
-      </div>
+      </section>
         
+      <section className="products wrapper">
+        <h2 className="products__title">Products</h2>
+        <div className="products-card">
+          {products.length > 0 && products.map(product => (
+              <ProductCard 
+                id={product.id}
+                image={product.image}
+                price={product.price}
+                title={product.title}
+                key={product.id}
+              />
+            ))
+          }
+        </div>
+      </section>
 
-
-      <div className="product-card wrapper">
-        <h2>Products</h2>
-        {products.length > 0 && products.map(product => (
-            <ProductCard 
-              id={product.id}
-              image={product.image}
-              price={product.price}
-              title={product.title}
-              key={product.id}
-            />
-          ))
-        }
-      </div>
+      <section className="categories">
+        <div className="wrapper">
+          <h2>Categories</h2>
+        </div>
+      </section>
 
       
     </main>

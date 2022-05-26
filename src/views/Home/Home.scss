@@ -1,18 +1,15 @@
 @import '/src/assets/stylesheets/general.scss';
 
-.product-card {
-  @include flex(flex, row, wrap, flex-start, flex-start)
-}
-
+/* HEADER */
 .header {
   min-height: 100vh;
   @include flex(flex, row, nowrap, space-between, center);
-
+  
   &__left {
     width: 20%;
     z-index: 9999;
   }
-
+  
   &__title {
     font-size: 10rem;
     text-transform: uppercase;
@@ -22,13 +19,13 @@
   &__btn {
     @include btn-border($white-color, $black-color);
     font-size: 2.4rem;
-
+    
     &:hover {
       @include btn($black-color, $white-color);
       font-size: 2.4rem;
     }
   }
-
+  
   &__center {
     width: 60%;
     z-index: 0;
@@ -37,8 +34,29 @@
   &__right {
     width: 20%;
   }
-
+  
   &__subtitle {
     font-size: 2.5rem;
   }
+}
+
+
+/* PRODUCTS */
+.products {
+  text-align: center;
+
+  &__title {
+    margin-bottom: 5rem;
+  }
+}
+
+.products-card {
+  @include flex(flex, row, wrap, flex-start, flex-start)
+}
+
+
+
+/* CATEGORIES */
+.categories {
+  padding: 10rem 0;
 }

@@ -15,8 +15,7 @@ const ProductDetail = () => {
   console.log(product);
 
   return (
-    <>
-      <h1>Product detail</h1>
+    <div className="product-detail wrapper">
       {product ? (
         <div>
           <h2>{product.title}</h2>
@@ -27,7 +26,7 @@ const ProductDetail = () => {
         ) :
         'loading'
         }
-    </>
+    </div>
   )
   }
 
