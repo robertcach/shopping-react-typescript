@@ -1,1 +1,63 @@
 @import '/src/assets/stylesheets/general.scss';
+
+.product-detail {
+  padding: 5rem 0;
+
+  &__card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 10rem;
+  }
+
+  &__price {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  &__description {
+    font-size: 1.5rem;
+    color: #999999;
+    margin-bottom: 3rem;
+  }
+
+  &__btn {
+    @include btn($black-color, $white-color);
+    margin-bottom: 3rem;
+
+    &:hover {
+      @include btn-border($white-color, $black-color);
+    }
+  }
+
+  &__categories {
+    font-size: 1.3rem;
+    color: #444;
+
+    &::before {
+      content: "";
+      border-top: solid 1px #ececec;
+      display: block;
+      padding-top: 2rem;
+    }
+  }
+}
+
+.product-extra {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7rem;
+
+  &__info {
+    margin-bottom: 5rem;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+
+  }
+}

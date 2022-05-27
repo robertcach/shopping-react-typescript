@@ -4,7 +4,7 @@ import { Product } from "../types";
 const CART: string = "cart";
 
 interface CartContextProps {
- children: JSX.Element
+  children: JSX.Element
 }
 
 export interface CartContextValues {
@@ -17,10 +17,8 @@ const CartContext = React.createContext({} as CartContextValues);
 export const useCartContext = () => useContext(CartContext);
 
 
-
 export const CartContextProvider = ({children}: CartContextProps) => {
   const [cartItems, setCartItems] = useState<Product[]>(JSON.parse(localStorage.getItem(CART) as string) || []);
-
   const cartLocalStorage = localStorage.setItem(CART, JSON.stringify(cartItems));
 
   const addCart = useCallback(
