@@ -7,6 +7,10 @@ const ProductDetail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState<Product | null>(null)
 
+  const addToCart = (id: number) => {
+    console.log(id)
+  }
+
   useEffect(() => {
       getSingleProduct(Number(id))
         .then(productItem => setProduct(productItem))   
@@ -22,6 +26,7 @@ const ProductDetail = () => {
           <p>{product.description}</p>
           <p>{product.price}€</p>
           <img src={product.image} alt={product.title} />
+          <button onClick={() => addToCart(Number(id))}>Add to cart</button>
         </div>
         ) :
         'loading'

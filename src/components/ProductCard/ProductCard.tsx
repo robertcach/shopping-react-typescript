@@ -3,6 +3,7 @@ import { Product } from "../../types";
 import { Link } from "react-router-dom";
 
 const ProductCard: React.FC<Product> = ({image, title, price, id}) => {
+  
   return (
     <div className="products-card__single">
       <Link to={`/products/${id}`}>
