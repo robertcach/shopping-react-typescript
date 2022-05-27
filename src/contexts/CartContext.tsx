@@ -1,11 +1,10 @@
 import React, { useCallback, useContext, useMemo, useState } from "react";
 import { Product } from "../types";
 
-
 const CART: string = "cart";
 
 interface CartContextProps {
- children: any
+ children: JSX.Element
 }
 
 export interface CartContextValues {
@@ -14,8 +13,9 @@ export interface CartContextValues {
   setCartItems: React.Dispatch<React.SetStateAction<Product[]>>,
 }
 
-const CartContext = React.createContext<CartContextValues | undefined>(undefined);
+const CartContext = React.createContext({} as CartContextValues);
 export const useCartContext = () => useContext(CartContext);
+
 
 
 export const CartContextProvider = ({children}: CartContextProps) => {

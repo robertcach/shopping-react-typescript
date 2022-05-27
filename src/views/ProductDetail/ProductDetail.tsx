@@ -6,21 +6,20 @@ import { useCartContext } from "../../contexts/CartContext";
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const [product, setProduct] = useState<Product | null>(null);
-  const { cartItems } = useCartContext();
+  const [product, setProduct] = useState({} as Product);
+  const { cartItems, addCart } = useCartContext();
 
   useEffect(() => {
     getSingleProduct(Number(id))
       .then(productItem => setProduct(productItem))   
   },[id])
 
-  console.log(product);
-
   const addToCart = () => {
     if (!cartItems.includes(product)) {
-      console.log(product)
+      addCart(product);
     }
   };
+
 
   return (
     <div className="product-detail wrapper">
